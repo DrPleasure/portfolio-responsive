@@ -334,6 +334,11 @@ span {
     color: var(--second-bg-color);
 }
 
+#testuser {
+    font-size: 18px;
+    color: black;
+}
+
 .contact {
     min-height: auto;
     padding-bottom: 7rem;
