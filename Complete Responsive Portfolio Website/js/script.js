@@ -124,19 +124,24 @@ function onGameOver() {
   
   window.addEventListener('message', function (event) {
     // Check for the 'gameEnded' message
-    if (event.data === 'gameEnded') {
-        let iframe = document.getElementById('game-iframe');
+    if (event.data === 'gameOver') {
+      let iframe = document.getElementById('game-iframe');
+      if (iframe) {
         iframe.style.display = 'none';
-
-        let portfolioContent = document.getElementById('portfolio-content');
+      }
+  
+      let portfolioContent = document.getElementById('portfolio-content');
+      if (portfolioContent) {
         portfolioContent.style.display = 'block';
-
+  
         // Force reflow by accessing offsetHeight
         void portfolioContent.offsetHeight;
-
+  
         // You can also try dispatching a resize event to force the browser to recalculate the layout
         window.dispatchEvent(new Event('resize'));
+      }
     }
-}, false);
-
+  }, false);
+  
+  
   
