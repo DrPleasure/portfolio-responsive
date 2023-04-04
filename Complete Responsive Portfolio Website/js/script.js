@@ -114,10 +114,13 @@ window.addEventListener('click', (e) => {
 });
 
 
+
+
 // iFrame Fetch game function
 function onGameOver() {
     document.getElementById('fetch-game-iframe').style.display = 'none';
     document.getElementById('portfolio-content').style.display = 'block';
+    stopAllAudio();
   }
   
 
@@ -131,9 +134,12 @@ function onGameOver() {
       }
   
       let portfolioContent = document.getElementById('portfolio-content');
+      // Close the AudioContext
+
       if (portfolioContent) {
+        
         portfolioContent.style.display = 'block';
-  
+        
         // Force reflow by accessing offsetHeight
         void portfolioContent.offsetHeight;
   
