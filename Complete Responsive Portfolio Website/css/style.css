@@ -660,3 +660,8 @@ span {
 #portfolio-content {
     display: none;
 }
+
+#homebutton {
+    font-size:13px;
+    color: black;
+}
