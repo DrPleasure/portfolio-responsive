@@ -113,8 +113,30 @@ window.addEventListener('click', (e) => {
     }
 });
 
-// ...
+
+// iFrame Fetch game function
+function onGameOver() {
+    document.getElementById('fetch-game-iframe').style.display = 'none';
+    document.getElementById('portfolio-content').style.display = 'block';
+  }
+  
 
   
-  
+  window.addEventListener('message', function (event) {
+    // Check for the 'gameEnded' message
+    if (event.data === 'gameEnded') {
+        let iframe = document.getElementById('game-iframe');
+        iframe.style.display = 'none';
+
+        let portfolioContent = document.getElementById('portfolio-content');
+        portfolioContent.style.display = 'block';
+
+        // Force reflow by accessing offsetHeight
+        void portfolioContent.offsetHeight;
+
+        // You can also try dispatching a resize event to force the browser to recalculate the layout
+        window.dispatchEvent(new Event('resize'));
+    }
+}, false);
+
   
