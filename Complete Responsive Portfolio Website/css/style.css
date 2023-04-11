@@ -750,7 +750,9 @@ span {
   .skill {
     display: flex;
     flex-direction: column;
+    height: 130px;
     align-items: center;
+    justify-content: center;
     font-size: 2rem;
     flex-basis: 25%;
     padding: 1rem;
