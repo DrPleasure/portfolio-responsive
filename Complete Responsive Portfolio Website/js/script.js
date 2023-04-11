@@ -131,23 +131,30 @@ function onGameOver() {
       let iframe = document.getElementById('game-iframe');
       if (iframe) {
         iframe.style.display = 'none';
+        iframe.contentWindow.postMessage('stopAllAudio', '*');
+      }
+  
+      let overlay = document.getElementById('game-overlay');
+      if (overlay) {
+        overlay.style.display = 'none';
       }
   
       let portfolioContent = document.getElementById('portfolio-content');
-      // Close the AudioContext
-
       if (portfolioContent) {
-        
         portfolioContent.style.display = 'block';
-        
-        // Force reflow by accessing offsetHeight
         void portfolioContent.offsetHeight;
-  
-        // You can also try dispatching a resize event to force the browser to recalculate the layout
         window.dispatchEvent(new Event('resize'));
       }
     }
   }, false);
+  
+  
+  document.getElementById('start-game-button').addEventListener('click', function () {
+    let overlay = document.getElementById('game-overlay');
+    if (overlay) {
+      overlay.style.display = 'none';
+    }
+  });
   
   
   
