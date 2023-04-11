@@ -838,3 +838,6 @@ span {
     filter: invert(1);
   }
   
+  #phone {
+    font-size:18px;
+  }
