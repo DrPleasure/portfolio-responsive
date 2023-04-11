@@ -759,6 +759,11 @@ span {
     margin-bottom: 2rem;
   }
   
+  .skill:hover i {
+    font-size: 6rem;
+  }
+  
+
   .skill i {
     font-size: 4rem;
     margin-bottom: 1rem;
