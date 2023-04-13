@@ -761,9 +761,16 @@ span {
     margin-bottom: 2rem;
   }
   
+
   .skill:hover i {
     font-size: 15rem;
   }
+  
+  .skill:hover p {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+  }
+  
   
 
   .skill i {
